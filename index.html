@@ -1,1 +1,101 @@
-peepee
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chango&family=Coiny&display=swap&family=Kanit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="home-theme">
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">RD</a>
+            <div class="nav-menu">
+                <div class="dropdown">
+                    <button class="dropdown-btn" onclick="toggleDropdown()">
+                        Work <i class="fa fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-content" id="dropdown-menu">
+                        <a href="mynm-app.html">MyNM App</a>
+                        <a href="stroke-center.html">Stroke Center</a>
+                        <a href="voice-guidelines.html">Voice Guidelines</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-image">
+                        <img src="/img/headshot_round.webp" alt="Hero Image">
+                    </div>
+                    <div class="hero-text">
+                        <h1>UX Designer & Lifelong Learner</h1>
+                        <p>Stories shape us, but they are powerless if they are not heard. From patients to plumbers, I’ve worked on design solutions for diverse groups of people by understanding their stories. I believe everyone has an important story to tell and everyone deserves great design.
+                        </p>
+                        <p>I also understand that great design requires great strategy. With a background in project management and a business education, I know the importance of reaching business objectives. As a UX designer, I work to bridge the gap between these objectives and customer happiness. </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects">
+            <div class="container">
+                <h2>Featured Projects</h2>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <img src="/img/mynm_redesign/thumbnail.jpg" alt="MyNM App Redesign">
+                        <div class="card-content">
+                            <div class="card-text">
+                                <h3>MyNM App Redesign</h3>
+                                <p>A comprehensive redesign focused on improving user experience and accessibility for state government services.</p>
+                            </div>
+                            <a href="mynm-app.html" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <img src="/img/stroke/thumbnail.webp" alt="Comprehensive Stroke Center">
+                        <div class="card-content">
+                            <div class="card-text">
+                                <h3>Comprehensive Stroke Center</h3>
+                                <p>Healthcare interface design for critical care coordination and patient management systems.</p>
+                            </div>
+                            <a href="stroke-center.html" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <img src="/img/voice_guidelines/Brand Guidelines Cover.jpg
+                        " alt="Virtual Assistant Voice Guidelines">
+                        <div class="card-content">
+                            <div class="card-text">
+                                <h3>Virtual Assistant Voice Guidelines</h3>
+                                <p>Comprehensive voice interaction design guidelines for conversational AI experiences.</p>
+                            </div>
+                            <a href="voice-guidelines.html" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
