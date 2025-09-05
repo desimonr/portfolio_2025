@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design System - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chango&family=Coiny&display=swap&family=Kanit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="home-theme">
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">RD</a>
+            <div class="nav-menu">
+                <div class="dropdown">
+                    <button class="dropdown-btn" onclick="toggleDropdown()">
+                        Work <i class="fa fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-content" id="dropdown-menu">
+                        <a href="mynm-app.html">MyNM App</a>
+                        <a href="stroke-center.html">Stroke Center</a>
+                        <a href="voice-guidelines.html">Voice Guidelines</a>
+                        <a href="design-system.html">Design System</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="project-page">
+        <div class="container">
+            <h1 class="project-title">Design System</h1>
+
+            <!-- Color Palette Section -->
+            <section class="ds-section">
+                <h2>Color Palettes</h2>
+                <div class="ds-grid">
+                    <div class="ds-color-card home-theme">
+                        <h3>Home Theme</h3>
+                        <div class="color-swatch" style="background-color: var(--primary-surface);"><code>--primary-surface</code></div>
+                        <div class="color-swatch" style="background-color: var(--secondary-surface); color: white;"><code>--secondary-surface</code></div>
+                        <div class="color-swatch" style="background-color: var(--primary-surface);"><code>--headings-on-primary</code></div>
+                        <div class="color-swatch" style="background-color: var(--primary-surface);"><code>--body-on-primary</code></div>
+                    </div>
+                    <div class="ds-color-card project1-theme">
+                        <h3>Project 1 Theme</h3>
+                        <div class="color-swatch" style="background-color: var(--primary-surface);"><code>--primary-surface</code></div>
+                        <div class="color-swatch" style="background-color: var(--secondary-surface); color: white;"><code>--secondary-surface</code></div>
+                        <div class="color-swatch" style="background-color: var(--headings-on-primary);"><code>--headings-on-primary</code></div>
+                        <div class="color-swatch" style="background-color: var(--body-on-primary);"><code>--body-on-primary</code></div>
+                    </div>
+                    <div class="ds-color-card project2-theme">
+                        <h3>Project 2 Theme</h3>
+                        <div class="color-swatch" style="background-color: var(--primary-surface); color: white;"><code>--primary-surface</code></div>
+                        <div class="color-swatch" style="background-color: var(--secondary-surface);"><code>--secondary-surface</code></div>
+                        <div class="color-swatch" style="background-color: var(--headings-on-primary);"><code>--headings-on-primary</code></div>
+                        <div class="color-swatch" style="background-color: var(--body-on-primary); color: white;"><code>--body-on-primary</code></div>
+                    </div>
+                    <div class="ds-color-card project3-theme">
+                        <h3>Project 3 Theme</h3>
+                        <div class="color-swatch" style="background-color: var(--primary-surface); color: white;"><code>--primary-surface</code></div>
+                        <div class="color-swatch" style="background-color: var(--secondary-surface);"><code>--secondary-surface</code></div>
+                        <div class="color-swatch" style="background-color: var(--headings-on-primary);"><code>--headings-on-primary</code></div>
+                        <div class="color-swatch" style="background-color: var(--body-on-primary); color: white;"><code>--body-on-primary</code></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Typography Section -->
+            <section class="ds-section">
+                <h2>Typography</h2>
+                <div class="ds-typography-specimen">
+                    <h1 class="ds-type-heading">H1 Heading - Coiny</h1>
+                    <p><code>--h1-size: 48pt (desktop), 32pt (mobile)</code></p>
+                </div>
+                <div class="ds-typography-specimen">
+                    <h2 class="ds-type-heading">H2 Heading - Coiny</h2>
+                    <p><code>--h2-size: 36pt (desktop), 28pt (mobile)</code></p>
+                </div>
+                <div class="ds-typography-specimen">
+                    <h3 class="ds-type-heading">H3 Heading - Coiny</h3>
+                    <p><code>--h3-size: 28pt (desktop), 24pt (mobile)</code></p>
+                </div>
+                <div class="ds-typography-specimen">
+                    <h4 class="ds-type-heading">H4 Heading - Coiny</h4>
+                    <p><code>--h4-size: 20pt (desktop), 18pt (mobile)</code></p>
+                </div>
+                <div class="ds-typography-specimen">
+                    <h5 class="ds-type-heading">H5 Heading - Kanit</h5>
+                    <p><code>--h5-size: 18pt (desktop), 16pt (mobile)</code></p>
+                </div>
+                <div class="ds-typography-specimen">
+                    <p class="ds-type-heading" style="font-size: var(--body-size);">Body Text - Kanit</p>
+                    <p><code>--body-size: 18px (desktop), 16pt (mobile)</code></p>
+                </div>
+            </section>
+
+            <!-- Spacing Section -->
+            <section class="ds-section">
+                <h2>Spacing</h2>
+                <div class="ds-spacing-specimen">
+                    <div class="ds-spacer" style="width: var(--spacing-xs); height: var(--spacing-xs);"></div>
+                    <p><code>--spacing-xs: 4px</code></p>
+                </div>
+                <div class="ds-spacing-specimen">
+                    <div class="ds-spacer" style="width: var(--spacing-sm); height: var(--spacing-sm);"></div>
+                    <p><code>--spacing-sm: 8px</code></p>
+                </div>
+                <div class="ds-spacing-specimen">
+                    <div class="ds-spacer" style="width: var(--spacing-md); height: var(--spacing-md);"></div>
+                    <p><code>--spacing-md: 16px</code></p>
+                </div>
+                <div class="ds-spacing-specimen">
+                    <div class="ds-spacer" style="width: var(--spacing-lg); height: var(--spacing-lg);"></div>
+                    <p><code>--spacing-lg: 24px</code></p>
+                </div>
+                <div class="ds-spacing-specimen">
+                    <div class="ds-spacer" style="width: var(--spacing-xl); height: var(--spacing-xl);"></div>
+                    <p><code>--spacing-xl: 32px</code></p>
+                </div>
+            </section>
+
+            <!-- Border Radius Section -->
+            <section class="ds-section">
+                <h2>Border Radius</h2>
+                <div class="ds-radius-grid">
+                    <div class="ds-radius-specimen" style="border-radius: var(--radius-sm);"><code>--radius-sm: 4px</code></div>
+                    <div class="ds-radius-specimen" style="border-radius: var(--radius-md);"><code>--radius-md: 8px</code></div>
+                    <div class="ds-radius-specimen" style="border-radius: var(--radius-lg);"><code>--radius-lg: 16px</code></div>
+                    <div class="ds-radius-specimen" style="border-radius: var(--radius-xl);"><code>--radius-xl: 24px</code></div>
+                </div>
+            </section>
+
+            <!-- Components Section -->
+            <section class="ds-section">
+                <h2>Components</h2>
+                <h3 class="ds-component-title">Project Cards</h3>
+                <div class="ds-component-grid">
+                    <div class="ds-component-wrapper home-theme">
+                        <div class="project-card">
+                            <img src="https://via.placeholder.com/400x200/B2F5FF/006E80?text=Home+Theme" alt="Project Card Example">
+                            <div class="card-content">
+                                <div class="card-text"><h3>Card Title</h3><p>This is a description of the project.</p></div>
+                                <a href="#" class="btn btn-primary">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ds-component-wrapper project1-theme">
+                        <div class="project-card">
+                            <img src="https://via.placeholder.com/400x200/C3ADFF/4C23BC?text=Project+1+Theme" alt="Project Card Example">
+                            <div class="card-content">
+                                <div class="card-text"><h3>Card Title</h3><p>This is a description of the project.</p></div>
+                                <a href="#" class="btn btn-primary">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ds-component-wrapper project2-theme">
+                        <div class="project-card">
+                            <img src="https://via.placeholder.com/400x200/306600/B8D2FF?text=Project+2+Theme" alt="Project Card Example">
+                            <div class="card-content">
+                                <div class="card-text"><h3>Card Title</h3><p>This is a description of the project.</p></div>
+                                <a href="#" class="btn btn-primary">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ds-component-wrapper project3-theme">
+                        <div class="project-card">
+                            <img src="https://via.placeholder.com/400x200/73264A/CCFFF5?text=Project+3+Theme" alt="Project Card Example">
+                            <div class="card-content">
+                                <div class="card-text"><h3>Card Title</h3><p>This is a description of the project.</p></div>
+                                <a href="#" class="btn btn-primary">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="ds-component-title">Project Details Card</h3>
+                <div class="ds-component-grid">
+                    <div class="ds-component-wrapper home-theme">
+                        <div class="project-details-card"><h4>Project Details</h4><div class="detail-item"><span class="label">Role:</span><span>UX Designer</span></div><div class="detail-item"><span class="label">Tools:</span><span>Figma</span><span>Sketch</span></div></div>
+                    </div>
+                     <div class="ds-component-wrapper project1-theme">
+                        <div class="project-details-card"><h4>Project Details</h4><div class="detail-item"><span class="label">Role:</span><span>UX Designer</span></div><div class="detail-item"><span class="label">Tools:</span><span>Figma</span><span>Sketch</span></div></div>
+                    </div>
+                     <div class="ds-component-wrapper project2-theme">
+                        <div class="project-details-card"><h4>Project Details</h4><div class="detail-item"><span class="label">Role:</span><span>UX Designer</span></div><div class="detail-item"><span class="label">Tools:</span><span>Figma</span><span>Sketch</span></div></div>
+                    </div>
+                     <div class="ds-component-wrapper project3-theme">
+                        <div class="project-details-card"><h4>Project Details</h4><div class="detail-item"><span class="label">Role:</span><span>UX Designer</span></div><div class="detail-item"><span class="label">Tools:</span><span>Figma</span><span>Sketch</span></div></div>
+                    </div>
+                </div>
+
+                <h3 class="ds-component-title">Dropdown Menu</h3>
+                <div class="ds-component-grid">
+                    <div class="ds-component-wrapper home-theme">
+                        <div class="navbar"><div class="nav-container"><div class="dropdown"><button class="dropdown-btn">Work <i class="fa fa-chevron-down"></i></button><div class="dropdown-content show"><a href="#">MyNM App</a><a href="#">Stroke Center</a></div></div></div></div>
+                    </div>
+                    <div class="ds-component-wrapper project1-theme">
+                        <div class="navbar"><div class="nav-container"><div class="dropdown"><button class="dropdown-btn">Work <i class="fa fa-chevron-down"></i></button><div class="dropdown-content show"><a href="#">MyNM App</a><a href="#">Stroke Center</a></div></div></div></div>
+                    </div>
+                    <div class="ds-component-wrapper project2-theme">
+                        <div class="navbar"><div class="nav-container"><div class="dropdown"><button class="dropdown-btn">Work <i class="fa fa-chevron-down"></i></button><div class="dropdown-content show"><a href="#">MyNM App</a><a href="#">Stroke Center</a></div></div></div></div>
+                    </div>
+                    <div class="ds-component-wrapper project3-theme">
+                        <div class="navbar"><div class="nav-container"><div class="dropdown"><button class="dropdown-btn">Work <i class="fa fa-chevron-down"></i></button><div class="dropdown-content show"><a href="#">MyNM App</a><a href="#">Stroke Center</a></div></div></div></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Raymond DeSimone. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simplified script for design system page dropdowns
+        function toggleDropdown() {
+            // The main script handles this, but we prevent errors if it's not loaded
+            console.log("Dropdown toggle clicked. Main script should handle visibility.");
+        }
+        // Note: The global script.js will handle the actual dropdown logic.
+        // This is just a placeholder to avoid 'not defined' errors if you were to isolate this page.
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
