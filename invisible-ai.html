@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invisible AI - Preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chango&family=Coiny&display=swap&family=Kanit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+* { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body { font-family: 'Kanit', sans-serif; line-height: 1.6; color: var(--body-on-primary); display: flex; flex-direction: column; min-height: 100vh; background-color: #0a0a0a; }
+img { max-width: 100%; height: auto; }
+a { text-decoration: none; color: inherit; }
+:root {
+  --spacing-xs: 4px; --spacing-sm: 8px; --spacing-md: 16px; --spacing-lg: 24px; --spacing-xl: 32px;
+  --radius-sm: 4px; --radius-md: 8px; --radius-lg: 16px;
+  --h1-size: 32pt; --h2-size: 28pt; --h3-size: 24pt; --h4-size: 18pt; --h5-size: 16pt; --body-size: 16pt; --button-size: 16pt;
+}
+@media (min-width: 768px) {
+  :root { --h1-size: 48pt; --h2-size: 36pt; --h3-size: 28pt; --h4-size: 20pt; --h5-size: 18pt; --body-size: 18px; --button-size: 18px; }
+}
+.project1-theme {
+  --primary-color: #F4F0FF; --secondary-color: #4F0FFF; --tertiary-color: #200075; --fourth-color: #ffffff;
+  --primary-surface: var(--primary-color);
+  --headings-on-primary: var(--secondary-color); --body-on-primary: var(--tertiary-color);
+  --secondary-surface: var(--secondary-color);
+  --headings-on-secondary: var(--primary-color); --body-on-secondary: var(--fourth-color);
+  --accent: var(--tertiary-color); --accent-hover: var(--secondary-color);
+  --dropdown-bg: var(--fourth-color); --dropdown-text: var(--tertiary-color);
+  --dropdown-hover-bg: var(--tertiary-color); --dropdown-hover-text: var(--fourth-color);
+  --details-card-bg: var(--fourth-color);
+  --details-card-heading-text: var(--secondary-color); --details-card-body-text: var(--tertiary-color);
+}
+h1, h2, h3, h4 { font-family: 'Coiny', serif; font-weight: 400; line-height: 1.2; margin-bottom: var(--spacing-md); }
+h1 { font-size: var(--h1-size); } h2 { font-size: var(--h2-size); } h4 { font-size: var(--h4-size); }
+p, body { font-family: 'Kanit', sans-serif; font-size: var(--body-size); margin-bottom: var(--spacing-md); }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 var(--spacing-md); }
+.navbar { background: var(--primary-surface); padding: var(--spacing-md) 0; position: fixed; top: 0; width: 100%; z-index: 1000; }
+.nav-container { max-width: 1200px; margin: 0 auto; padding: 0 var(--spacing-md); display: flex; justify-content: flex-start; align-items: center; gap: var(--spacing-lg); }
+.nav-logo { font-family: 'Coiny', cursive; font-size: var(--h4-size); font-weight: 400; color: var(--secondary-color); }
+.nav-menu { position: relative; }
+.dropdown { position: relative; display: inline-block; }
+.dropdown-btn { background: transparent; border: none; color: var(--secondary-color); font-family: 'Coiny', sans-serif; font-size: var(--h4-size); font-weight: 400; cursor: pointer; padding: var(--spacing-sm) var(--spacing-md); border-radius: var(--radius-sm); display: flex; align-items: center; gap: var(--spacing-xs); }
+.dropdown-content { display: none; position: absolute; left: 0; top: 100%; background: var(--dropdown-bg); min-width: 180px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); border-radius: var(--radius-md); overflow: hidden; z-index: 1001; }
+.dropdown-content.show { display: block; }
+.dropdown-content a { color: var(--dropdown-text); font-family: 'Kanit', sans-serif; font-size: var(--button-size); padding: var(--spacing-md) var(--spacing-lg); display: block; transition: background-color 0.3s ease; }
+.dropdown-content a:hover, .dropdown-content a.active { background: var(--dropdown-hover-bg); color: var(--dropdown-hover-text); }
+main { flex-grow: 1; }
+.project-page { padding-top: calc(80px + var(--spacing-lg)); background: var(--primary-surface); color: var(--body-on-primary); min-height: 100vh; }
+.project-title { color: var(--headings-on-primary); text-align: center; margin-bottom: var(--spacing-xl); }
+.project-header { position: relative; margin-bottom: var(--spacing-xl); }
+.project-header-image { width: 100%; border-radius: var(--spacing-md); margin-bottom: var(--spacing-lg); }
+.project-details-card { background: var(--details-card-bg); padding: var(--spacing-lg); border-radius: var(--radius-lg); box-shadow: 0 5px 15px rgba(0,0,0,0.1); position: sticky; top: calc(80px + var(--spacing-lg)); }
+.project-details-card h4 { color: var(--details-card-heading-text); margin-bottom: var(--spacing-md); border-bottom: 2px solid var(--primary-surface); padding-bottom: var(--spacing-sm); }
+.detail-item { margin-bottom: var(--spacing-md); color: var(--details-card-body-text); display: block; }
+.detail-item span:not(.label) { display: list-item; list-style-position: inside; font-size: 1em; margin-left: var(--spacing-sm); line-height: 1.5; }
+.detail-item span.label { background: transparent; color: var(--details-card-heading-text); padding: 0; font-weight: 600; margin-bottom: var(--spacing-xs); display: block; }
+@media (min-width: 768px) {
+  .project-header { display: grid; grid-template-columns: 1fr 300px; gap: var(--spacing-lg); align-items: start; }
+  .project-header-image { margin-bottom: 0; }
+}
+.project-content { margin-top: var(--spacing-xl); }
+.content-section { background: var(--primary-surface); padding: var(--spacing-xl); margin-bottom: var(--spacing-xl); border-radius: var(--radius-lg); }
+.content-section h2 { color: var(--headings-on-primary); margin-bottom: var(--spacing-lg); }
+.content-section img { width: 100%; border-radius: var(--spacing-sm); margin-bottom: var(--spacing-lg); }
+.content-section p { color: var(--body-on-primary); line-height: 1.7; }
+.content-section em { font-style: italic; }
+.footer { background: var(--primary-surface); color: var(--body-on-primary); text-align: center; padding: var(--spacing-lg) 0; margin-top: auto; }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.content-section { animation: fadeInUp 0.6s ease-out; }
+.img-placeholder { background: #e8e4ff; border-radius: var(--radius-sm); min-height: 240px; display: flex; align-items: center; justify-content: center; color: var(--tertiary-color); font-family: 'Kanit', sans-serif; font-size: 14px; margin-bottom: var(--spacing-lg); width: 100%; }
+    </style>
+</head>
+<body class="project1-theme">
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">RD</a>
+            <div class="nav-menu">
+                <div class="dropdown">
+                    <button class="dropdown-btn" onclick="this.nextElementSibling.classList.toggle('show')">
+                        Projects <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#">Voice Guidelines</a>
+                        <a href="#" class="active">Invisible AI</a>
+                        <a href="#">MyNM App</a>
+                        <a href="#">Stroke Center</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="project-page">
+        <div class="container">
+            <h1 class="project-title">Invisible AI: Video Review Interface</h1>
+
+            <div class="project-header">
+                <div class="img-placeholder">📷 header.png — loads on live site</div>
+
+                <div class="project-details-card">
+                    <h4>Project Details</h4>
+                    <div class="detail-item">
+                        <span class="label">Responsibilities</span>
+                        <span>AI Interface Design</span>
+                        <span>UX Research</span>
+                        <span>Wireframing</span>
+                        <span>Design</span>
+                        <span>Design System</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">Players</span>
+                        <span>UX Consultant</span>
+                        <span>Site Managers</span>
+                        <span>Engineers</span>
+                        <span>Product Team</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">Tools</span>
+                        <span>Figma</span>
+                        <span>FigJam</span>
+                        <span>Material 3</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-content">
+
+                <section class="content-section">
+                    <h2>About Invisible AI</h2>
+                    <p>Invisible AI builds computer vision software for manufacturing, using AI to automatically track worker safety and operational progress across factory camera networks. The system's cameras observe factory floors continuously, using computer vision to identify workers, group all footage of the same subject across multiple cameras, and surface safety and productivity insights to Site Managers and Engineers through a web application.</p>
+                    <p>As a UX Consultant, I was brought in to redesign the video review interface — the core part of the app where managers and engineers search for, watch, and act on AI-organized footage.</p>
+                </section>
+
+                <section class="content-section">
+                    <h2>The Design Challenge</h2>
+                    <p>The central UX challenge of this project was one that's native to AI-powered products: the system's computer vision automatically groups all footage of a given subject across every camera in the facility. This is powerful — it means a Site Manager can search for a specific worker or vehicle and instantly surface every angle of their activity without manually scrubbing through hours of footage from individual cameras.</p>
+                    <p>But this comprehensiveness creates a new problem. When the AI returns everything it knows about a subject, the interface has to present that volume of content in a way that's scannable, navigable, and trustworthy. A search result that surfaces dozens of clips from across a 500-camera network — with no filtering, grouping, or hierarchy — creates cognitive overload, not clarity.</p>
+                    <p>The design question was: how do you build an interface that makes AI-organized video content feel manageable and actionable, rather than overwhelming?</p>
+                </section>
+
+                <section class="content-section">
+                    <h2>Research</h2>
+                    <p>I was provided with user personas at the start of the engagement, but conducted my own research to understand best practices for AI-assisted media review interfaces — a design problem with no direct precedent in the company's existing process.</p>
+                    <p>I also had access to a user interview conducted with a Site Manager at a manufacturing facility — a Group Leader responsible for investigating defects and monitoring worker safety across multiple production lines. The interview surfaced several insights that shaped the redesign directly.</p>
+                    <p>The most important finding was about search result scale. The user described searching for a vehicle body number and receiving results from every camera in the facility simultaneously: <em>"It's showing me every single camera that that body number was seen on. If I only want to look at a certain line... it would clean up the interface."</em> At the current camera count this was manageable; at 500 cameras it would be unworkable. The AI's thoroughness was becoming a UX liability.</p>
+                    <p>A second key finding was about cross-camera navigation. Users were frequently jumping between adjacent cameras manually — using previous/next controls — because the AI-grouped results didn't help them understand the spatial relationships between clips. The interface surfaced the footage, but didn't help users navigate between what each camera could and couldn't see.</p>
+                    <p>The interview also revealed that searching by body number accounted for roughly 98–99% of all usage — a clear signal about where to prioritize interface clarity and reduce friction.</p>
+                    <div class="img-placeholder">📷 research.png — loads on live site</div>
+                </section>
+
+                <section class="content-section">
+                    <h2>Key Design Decisions</h2>
+                    <p>The original interface presented all search results as an undifferentiated list with no filtering or grouping by camera location. Every clip the AI had identified was surfaced at equal weight, forcing users to impose their own mental model on the results. For the primary use case — tracking a subject through a specific production line — this meant scanning past dozens of irrelevant results to find what mattered.</p>
+                    <div class="img-placeholder">📷 original_ui.png — loads on live site</div>
+                    <p>The redesign introduced line-level filtering as the primary organizational layer, so users could scope results to a specific production area immediately after searching. This respected the AI's comprehensive grouping while giving users control over what they saw — reducing the interface from a complete data dump to a focused, actionable view.</p>
+                    <p>I also redesigned the video player layout to make spatial context visible. Rather than hiding camera metadata, the new design surfaced each clip's camera location and its relationship to adjacent cameras — making the cross-camera navigation that users relied on feel intentional rather than exploratory.</p>
+                    <p>Across the redesign, I followed the principle of designing for the AI's failure modes as well as its successes. The system occasionally groups footage incorrectly — misidentifying a subject or missing a clip. The interface needed clear affordances for users to verify, correct, and act with confidence rather than simply accepting what the AI surfaced.</p>
+                    <div class="img-placeholder">📷 new_ui.png — loads on live site</div>
+                </section>
+
+                <section class="content-section">
+                    <h2>Design System Updates</h2>
+                    <p>In parallel with the interface redesign, I modernized Invisible AI's product design system, which had been adapted from Material 3 but hadn't been updated to reflect the specific visual language and interaction patterns of an industrial computer vision product.</p>
+                    <p>The updates included defining a brand-aligned color palette and typography scale, creating new components specific to the video review context — including video thumbnail cards, camera location indicators, and filter controls — and documenting usage guidelines so the development team could implement consistently without needing design sign-off on every edge case.</p>
+                    <div class="img-placeholder">📷 design_system.png — loads on live site</div>
+                </section>
+
+                <section class="content-section">
+                    <h2>Outcome</h2>
+                    <p>The redesigned interface gave Invisible AI a video review experience built around the specific challenges of presenting AI-organized content at industrial scale. By introducing line-level filtering, clearer spatial navigation, and a design system grounded in the product's actual context, the redesign addressed the core tension of the product: an AI that sees everything, surfaced through an interface that helps users focus on what matters.</p>
+                    <p>The engagement also resulted in a design system that gave the product team a documented foundation to build from — reducing design debt and improving implementation consistency as the product scaled to new facilities and camera networks.</p>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Raymond DeSimone. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
